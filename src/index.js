@@ -1,17 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+class Hello extends React.Component{
+  render(){
+    return(<h1>Hi Freinds</h1>)
+  }
+}
 
-
+class Timer extends React.Component{
+  render(){
+    return(
+  <h2>it is {new Date().toLocaleTimeString()}</h2>
+  )
+}
+}
+class App extends React.Component{
+  render(){
+    return(
+      <div>
+        <Hello/>
+        <Timer/>
+      </div>
+    )
+  }
+}
 
 const tick=()=>{
-  const elem=(
-    <div>
-      <h1>Hi Freinds</h1>
-      <h2>it is {new Date().toLocaleTimeString()}</h2>
-    </div>
-  )
-  ReactDOM.render(elem,document.getElementById('root'));
+
+  ReactDOM.render(<App/>,document.getElementById('root'));
 }
 
 setInterval(() => {
