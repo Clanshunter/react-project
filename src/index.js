@@ -8,16 +8,27 @@ class Hello extends React.Component{
 }
 
 class Timer extends React.Component{
+  constructor(){
+    super();
+    this.state={
+      time: new Date().toLocaleTimeString()
+    }
+  }
   render(){
+    setInterval(() => {
+      this.setState({
+        time:new Date().toLocaleTimeString()
+      })
+    }, 1000);
     return(
-  <h2>it is {new Date().toLocaleTimeString()}</h2>
-  )
-}
+      <h2 className='timer'>it is {this.state.time}</h2>
+          )
+  }
 }
 class App extends React.Component{
   render(){
     return(
-      <div>
+      <div className='main'>
         <Hello/>
         <Timer/>
       </div>
@@ -25,14 +36,14 @@ class App extends React.Component{
   }
 }
 
-const tick=()=>{
+//const tick=()=>{
 
   ReactDOM.render(<App/>,document.getElementById('root'));
-}
+//}
 
-setInterval(() => {
-  tick();
-}, 1000);
+//setInterval(() => {
+ // tick();
+//}, 1000);
 
 
 
