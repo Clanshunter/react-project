@@ -1,8 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Hello from './Hello';
-import Timer from './Timer';
-class App extends React.Component{
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import Hello from "./Hello";
+import Timer from "./Timer";
+
+/*class App extends React.Component{
     render(){
       return(
         <div className='main'>
@@ -11,6 +12,13 @@ class App extends React.Component{
         </div>
       )
     }
-  }
-
-  export default App;
+  } */
+const App = () => {
+  return (
+    <div className="main">
+      <Hello />
+      <Timer />
+    </div>
+  );
+};
+export default App;
